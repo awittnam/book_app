@@ -12,7 +12,7 @@
     "url": "git+https://github.com/awittnam/book_app.git"
   },
   "author": "Adam Wittnam & Andrew Quamme",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/awittnam/book_app/issues"
   },
@@ -24,5 +24,6 @@
     "express": "^4.16.4",
     "pg": "^7.7.1",
     "superagent": "^4.0.0"
-  }
+  },
+  "devDependencies": {}
 }
