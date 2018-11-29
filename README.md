@@ -19,3 +19,13 @@ Start time: 1020 hrs
 Finish time:  1240 hrs
 
 Actual time needed to complete: 1 hr (we took a lunch in between)
+
+Number and name of feature: #3 Display Search Results
+
+Estimate of time needed to complete: 45 min
+
+Start time: 1300 hrs
+
+Finish time:   hrs
+
+Actual time needed to complete: :45
