@@ -1,14 +1,3 @@
-
-
-
-// // Load environment variables from .env file
-// require('dotenv').config();
-
-
-
-// app.get('/', (request, response) => response.render('pages/index'));
-
-
 'use strict';
 
 // Application Dependencies
@@ -18,9 +7,9 @@ const cors = require('cors');
 const pg = require('pg');
 
 // Application Setup
+// require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 4000;
-app.set('view engine', 'ejs');// tell it we're using ejs
 app.use(cors());
 
 // Application Middleware
@@ -48,7 +37,10 @@ function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
 
   this.title = info.title || 'No title available';
-
+  this.isbn = info.id || 0; //needs fix
+  this.author = info.authors || 'No author available';
+  this.description = info.description || 'No description available';
+  this.image_url = placeholderImage; //needs fix
 }
 
 // Note that .ejs file extension is not required
@@ -59,7 +51,7 @@ function newSearch(request, response) {
 // No API key required
 // Console.log request.body and request.body.search
 function createSearch(request, response) {
-  let url = 'https://www.googleapis.com/books/v1/volumes?q=';
+  let url = 'https://www.googleapis.com/books/v1/volumes?maxResults=10&q=';
 
   console.log(request.body)
   console.log(request.body.search)
