@@ -14,7 +14,7 @@ app.use(cors());
 
 // Application Middleware
 app.use(express.urlencoded({extended:true}));
-app.use(express.static('public'));
+app.use(express.static('/public'));
 
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
@@ -37,10 +37,10 @@ function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
 
   this.title = info.title || 'No title available';
-  this.isbn = info.id || 0; //needs fix
+  this.isbn = info.industryIdentifiers[0].identifier || 0;
   this.author = info.authors || 'No author available';
   this.description = info.description || 'No description available';
-  this.image_url = placeholderImage; //needs fix
+  this.image_url = info.imageLinks.smallThumbnail || placeholderImage;
 }
 
 // Note that .ejs file extension is not required
