@@ -14,7 +14,7 @@ app.use(cors());
 
 // Application Middleware
 app.use(express.urlencoded({extended:true}));
-app.use(express.static('/public'));
+app.use(express.static('./public'));
 
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
@@ -37,10 +37,10 @@ function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
 
   this.title = info.title || 'No title available';
-  this.isbn = info.industryIdentifiers[0].identifier || 0;
+  this.isbn = info.industryIdentifiers ? info.industryIdentifiers[0].identifier : 'No ISBN available';
   this.author = info.authors || 'No author available';
   this.description = info.description || 'No description available';
-  this.image_url = info.imageLinks.smallThumbnail || placeholderImage;
+  this.image_url = info.imageLinks ? info.imageLinks.smallThumbnail : placeholderImage;
 }
 
 // Note that .ejs file extension is not required
@@ -53,14 +53,19 @@ function newSearch(request, response) {
 function createSearch(request, response) {
   let url = 'https://www.googleapis.com/books/v1/volumes?maxResults=10&q=';
 
-  console.log(request.body)
-  console.log(request.body.search)
+  console.log(request.body);
 
   if (request.body.search[1] === 'title') { url += `+intitle:${request.body.search[0]}`; }
   if (request.body.search[1] === 'author') { url += `+inauthor:${request.body.search[0]}`; }
+  console.log('URL: ', url);
 
   superagent.get(url)
     .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
     .then(results => response.render('pages/searches/show', {searchResults: results}))
-    // how will we handle errors?
+    .catch(err => handleError(err, response));
+}
+
+function handleError(error, response) {
+  console.log(error);
+  response.render('pages/error', {error: error});
 }
