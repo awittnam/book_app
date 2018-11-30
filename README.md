@@ -41,3 +41,14 @@ Start time: 1020 hrs
 Finish time: 1033  hrs
 
 Actual time needed to complete: 13min.
+
+
+Number and name of feature: #5 Style the book application
+
+Estimate of time needed to complete:  min
+
+Start time:  1045hrs
+
+Finish time:   hrs
+
+Actual time needed to complete: min.
