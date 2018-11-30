@@ -45,10 +45,10 @@ Actual time needed to complete: 13min.
 
 Number and name of feature: #5 Style the book application
 
-Estimate of time needed to complete:  min
+Estimate of time needed to complete:  60min.
 
 Start time:  1045hrs
 
-Finish time:   hrs
+Finish time:  1130 hrs
 
-Actual time needed to complete: min.
+Actual time needed to complete: 45min.
