@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Book Collection</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/icons.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/modules/error.css">
+    <link rel="stylesheet" href="/styles/modules/partials/header.css">
+    <link rel="stylesheet" href="/styles/modules/partials/footer.css">
+    <link rel="stylesheet" href="/styles/modules/books/show.css">
+    <link rel="icon" type="image/png" href="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png">
+    <link rel="stylesheet" href="/styles/modules/searches/show.css">
+    <link rel="stylesheet" href="/styles/modules/books/show.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="/">
+                <h1>Best Books!</h1>
+            </a>
+        </div>
+        <nav>
+            <div class="icon-menu"></div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/searches/new">Search the Google Books API</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
+
         <h4>Search by Title or Author</h4>
         <form action="/searches" method="post">
-            <input type="text" name="search" placeholder="Ender a title or author" required>
+            <input id="search" type="text" name="search" placeholder="Enter a title or author" required>
             <fieldset>
                 <label for="title">
                     <span>Title</span>
@@ -19,11 +47,10 @@
                     <span>Author</span>
                     <input type="radio" name="search" value="author" required>
                 </label>
-                </fieldset>
-                <button type="submit">Search the Google Books API</button>
-            </form>
-        </main>
-    </body>
+            </fieldset>
+            <button type="submit">Search the Google Books API</button>
+        </form>
+    </main>
+</body>
+
 </html>
-
-
