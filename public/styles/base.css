@@ -19,6 +19,7 @@ header {
 form {
     background: lightgray;
     font-size: 20px;
+    align-content: center;
 }
 
 #search {
@@ -35,13 +36,15 @@ fieldset {
     background: gray;
     margin-bottom: 50px;
     width: 80%;
+    display: inline-block;
+    /* float: left; */
     
 }
 
 button {
     background: black;
     color: white;
-    align-content: center;
+    
     height: 50px;
     width: 80%;
     font-size: 20px;
