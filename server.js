@@ -20,9 +20,9 @@ app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 
 // API Routes
+app.get('/', loadSavedBooks);
 // Renders the search form
-app.get('/', newSearch);
-
+app.get('/searches/new', newSearch);
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
 
@@ -32,7 +32,6 @@ app.get('*', (request, response) => response.status(404).send('This route does n
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // HELPER FUNCTIONS
-// Only show part of this to get students started
 function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
 
@@ -43,13 +42,15 @@ function Book(info) {
   this.image_url = info.imageLinks ? info.imageLinks.smallThumbnail : placeholderImage;
 }
 
-// Note that .ejs file extension is not required
-function newSearch(request, response) {
+function loadSavedBooks(request, response) {
   response.render('pages/index');
 }
 
+function newSearch(request, response) {
+  response.render('pages/searches/new');
+}
+
 // No API key required
-// Console.log request.body and request.body.search
 function createSearch(request, response) {
   let url = 'https://www.googleapis.com/books/v1/volumes?maxResults=10&q=';
 
