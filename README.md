@@ -52,3 +52,15 @@ Start time:  1045hrs
 Finish time:  1130 hrs
 
 Actual time needed to complete: 45min.
+
+
+-----------lab 12--------
+Number and name of feature: #1 Show 
+
+Estimate of time needed to complete:  60min.
+
+Start time:  1130hrs
+
+Finish time:   hrs
+
+Actual time needed to complete: min.
