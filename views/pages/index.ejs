@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
-
-    <%- include('../layout/head') %>
+<%- include('../layout/head') %>
 
 <body>
     <%- include('../layout/header') %>
-
     <main>
-
-        <h4>My Books Text</h4>
-
+        <h4>My Books</h4>
+        <ul class="book-shelf">
+            <h3>Books in Library: <%= books.length %></h3>
+            <% books.forEach(book => { %>
+            <li data-book-id="<%= book.isbn %>">
+                <div class="book-container">
+                    <img src=<%=book.image_url %>>
+                    <section>
+                        <h3>
+                            <%= book.title %>
+                        </h3>
+                        <span>
+                            <%= book.author %></span>
+                        <p class="desc">
+                            <%= book.description %>
+                        </p>
+                    </section>
+                </div>
+            </li>
+            <% }) %>
+        </ul>
     </main>
-
     <%- include('../layout/footer') %>
 </body>
 
