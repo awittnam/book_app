@@ -59,8 +59,8 @@ Number and name of feature: #1 Show
 
 Estimate of time needed to complete:  60min.
 
-Start time:  1130hrs
+Start time:  1200hrs
 
-Finish time:   hrs
+Finish time:   1300hrs
 
-Actual time needed to complete: min.
+Actual time needed to complete: 60min.
